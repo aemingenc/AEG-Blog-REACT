@@ -16,19 +16,27 @@ export const addInfo = (info)=>{
     console.log("veri eklendi")
 }
 
-// export const useFetch = ()=>{
-//     const [contactList,setContactList]= useState();
-//     useEffect(()=>{
-//         const db=getDatabase();
-//         const userRef = ref(db,"contact");
+export const useFetch = ()=>{
+    const [contactList,setContactList]= useState();
+    useEffect(()=>{
+        const db=getDatabase();
+        const userRef = ref(db,"contact");
 
-//         onValue(query(userRef),snapshot =>{
-//             const contacts = snapshot.val()
-//             const contactArray = [];
-//             for (let id in contacts){
-//                 contactArray.push({id,...contacts[id]});
-//             }
-//             setContactList(contactArray);
-//         })
-//     },[]);
-// }
+        onValue(query(userRef),snapshot =>{
+            const contacts = snapshot.val()
+            const contactArray = [];
+            for (let id in contacts){
+                contactArray.push({id,...contacts[id]});
+            }
+            setContactList(contactArray);
+        })
+    },[]);
+    return {contactList};
+}
+
+export const deleteInfo =(id) =>{
+         const db=getDatabase();
+       // const userRef = ref(db,"contact");
+       remove(ref(db,"contact/"+id))
+       
+}

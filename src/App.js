@@ -8,10 +8,10 @@ import AppRouter from './routers/Router';
 function App() {
   return (
     <div className="App">
-      {/* <AuthContextProvider> */}
+      <AuthContextProvider>
 
       <AppRouter/>
-      {/* </AuthContextProvider> */}
+      </AuthContextProvider>
     </div>
   );
 }

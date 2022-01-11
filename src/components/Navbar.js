@@ -1,5 +1,4 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { FaUserCircle } from "react-icons/fa";
@@ -7,42 +6,43 @@ import { IconButton } from "@mui/material";
 import headShot from "../assets/headshot.jpg";
 import kus from "../assets/kus.jpg";
 import { useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState } from "react";
+import {useContext} from "react/cjs/react.development";
 import { AuthContext } from "../contexts/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../helpers/firebase";
 
-export default function PositionedMenu() {
+const Navbar=()=> {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
-  // const {currentUser} = useContext(AuthContext);
+  const {currentUser} = useContext(AuthContext);
   const open = Boolean(anchorEl);
 
-  // const handleNew = () => {
-  //   navigate("/newBlog");
-  //   setAnchorEl(null);
-  // };
-  // const signOutFunc = async () => {
-  //   await signOut(auth);
-  // };
-  // const handleProfile =()=>{
-  //   navigate("/profile")
-  //   setAnchorEl(null);
+  const handleNew = () => {
+    navigate("/newBlog");
+    setAnchorEl(null);
+  };
+  const signOutFunc = async () => {
+    await signOut(auth);
+  };
+  const handleProfile =()=>{
+    navigate("/profile")
+    setAnchorEl(null);
 
-  // }
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   
-  // const handleLogIn = () => {
-  //   navigate("/login");
-  //   setAnchorEl(null);
-  // };
-  // const handleRegister = () => {
-  //   navigate("/register");
-  //   setAnchorEl(null);
-  // };
+  const handleLogIn = () => {
+    navigate("/login");
+    setAnchorEl(null);
+  };
+  const handleRegister = () => {
+    navigate("/register");
+    setAnchorEl(null);
+  };
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -78,7 +78,7 @@ export default function PositionedMenu() {
           horizontal: "left",
         }}
       >
-        {/* {currentUser ? (
+        {currentUser ? (
           <div>
             <MenuItem onClick={handleProfile}>Profil</MenuItem> 
             <MenuItem onClick={handleNew}>New</MenuItem> 
@@ -90,9 +90,10 @@ export default function PositionedMenu() {
             <MenuItem onClick={handleRegister}>Register</MenuItem> 
           </div>
           
-        )} */}
+        )}
         
       </Menu>
     </div>
   );
 }
+export default Navbar;

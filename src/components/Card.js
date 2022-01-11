@@ -8,31 +8,33 @@ import Typography from '@mui/material/Typography';
 import {  AiFillHeart} from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
 import {FaUserCircle } from "react-icons/fa";
-import head from "../assets/headphones.svg"
-
-const Cards=()=> {
+import { useNavigate } from 'react-router-dom';
 
 
+const Cards=({title,url,content} )=> {
+const navigate = useNavigate()
+const handleClick = ()=>{
+  navigate("/details")
+}
   
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }}
+    onClick={handleClick}>
       
       <CardMedia
       style={{border:"red solid 2px"}}
         component="img"
         height="140"
-        image={head}
+        image={url}
         alt="Paella dish"
       />
       <CardContent style={{background:"#EFEEFE"}}>
-          <h3>JAVASCRİPT</h3>
+          <h3>{title}</h3>
           
           <p>may 17,2021</p>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {content}
         </Typography>
       </CardContent>
       <IconButton>

@@ -11,6 +11,7 @@ import UpdateBlog from "../pages/UpdateBlog"
 import Profile from "../pages/Profile"
 
 const AppRouter = () => {
+    
     return (
         
       
@@ -23,6 +24,7 @@ const AppRouter = () => {
                 <Route path="/newBlog" element={<NewBlog/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/upDate" element={<UpdateBlog/>}/>
+                <Route path="/details" element={<Details/>}/>
                    
 
                 
