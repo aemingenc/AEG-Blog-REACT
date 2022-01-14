@@ -6,11 +6,11 @@ import { addInfo } from '../helpers/functions'
 
 const initialValues ={ title:"" ,url:"" ,content:""}
 const NewBlog = () => {
-    const [info, setinfo] = useState(initialValues)
+    const [newInfo, setNewInfo] = useState(initialValues)
     const navigate =useNavigate
     const handleSubmit=()=>{
-        console.log(info)
-        addInfo(info)
+        console.log(newInfo)
+        addInfo(newInfo)
         navigate("/")
     }
 
@@ -18,7 +18,7 @@ const NewBlog = () => {
         // const name =e.target.name
         // const value =e.target.value
         const {name,value}=e.target;
-        setinfo({...info,[name]:value})
+        setNewInfo({...newInfo,[name]:value})
         
     }
     return (
@@ -26,18 +26,18 @@ const NewBlog = () => {
             <input 
             type="text"
              name="title" 
-             value ={info.title}
+             value ={newInfo.title}
              onChange ={handleChange} />
             <input 
             type="text" 
             name ="url" 
-            value={info.url}
+            value={newInfo.url}
             onChange ={handleChange} 
              />
             <textarea 
             name="content" 
             id=""
-            value={info.content} 
+            value={newInfo.content} 
             onChange ={handleChange}
             ></textarea>
             <button onClick={handleSubmit}>add</button>

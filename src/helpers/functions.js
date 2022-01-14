@@ -40,3 +40,4 @@ export const deleteInfo =(id) =>{
        remove(ref(db,"contact/"+id))
        
 }
+

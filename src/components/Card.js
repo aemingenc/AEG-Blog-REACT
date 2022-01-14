@@ -9,12 +9,22 @@ import {  AiFillHeart} from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
 import {FaUserCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
 
 
-const Cards=({title,url,content} )=> {
+const Cards=({item} )=> {
+  const{
+    title,
+    content,
+    url
+  }=item;
 const navigate = useNavigate()
+const {currentUser} = React.useContext(AuthContext)
 const handleClick = ()=>{
-  navigate("/details")
+  if (!currentUser){
+    alert("LOGIN OL")
+  }else{
+  navigate(`/details/${id}`)}
 }
   
 

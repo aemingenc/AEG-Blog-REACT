@@ -13,7 +13,7 @@ const Main = () => {
                //console.log(contactList)
             contactList?.map((item,index)=>(
                 <div key ={index}>
-               <Card title={item.title} url={item.url} content={item.content} />
+               <Card item={item}  />
                 </div>
            )) 
            )}
