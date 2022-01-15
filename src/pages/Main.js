@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from "../components/Card"
- import { useFetch } from '../helpers/functions'
+import { BlogContext } from '../contexts/BlogContext'
 const Main = () => {
 
-     const {contactList} = useFetch();
+     const {currentInfo} = useContext(BlogContext)
 
     return (
-        <div>
-            
-           {contactList?.length ===0 ? (
+        <div className='card-container'>
+            {console.log(currentInfo)}
+           {currentInfo === undefined ? (console.log("nab")) :(currentInfo?.length ===0 ? (
            <p>Proje yok</p>) :( 
                //console.log(contactList)
-            contactList?.map((item,index)=>(
-                <div key ={index}>
-               <Card item={item}  />
+            currentInfo?.map((item,index)=>(
+                <div  key ={index}>
+                    
+               <Card userItems={item}  />
                 </div>
-           )) 
+           ))) 
            )}
         </div>
     )

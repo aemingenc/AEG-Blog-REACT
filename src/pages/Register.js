@@ -2,11 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
-import headShot from "../assets/headshot.jpg"
 import { useNavigate } from 'react-router-dom';
 import {useState} from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth} from "../helpers/firebase"
+import kus from "../assets/kus.jpg"
 export default function FormPropsTextFields() {
     const navigate = useNavigate();
     const [email,setEmail] = useState();
@@ -27,7 +27,7 @@ export default function FormPropsTextFields() {
   return (
     <div className="container">
         <div>
-            <img src={headShot} alt="" />
+            <img  className='img-head'src={kus} alt="" />
             <h1>--- Register---</h1>
         </div>
 

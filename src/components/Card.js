@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -10,47 +10,56 @@ import { BiComment } from "react-icons/bi";
 import {FaUserCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import { useContext } from 'react';
 
 
-const Cards=({item} )=> {
+const Cards=({userItems} )=> {
+  
   const{
+    id,
     title,
     content,
-    url
-  }=item;
+    url,
+    userEmail,
+    date
+  }=userItems;
 const navigate = useNavigate()
-const {currentUser} = React.useContext(AuthContext)
+const {currentUser} = useContext(AuthContext)
 const handleClick = ()=>{
   if (!currentUser){
     alert("LOGIN OL")
   }else{
   navigate(`/details/${id}`)}
 }
-  
+  console.log(userItems)
+
 
   return (
     <Card sx={{ maxWidth: 345 }}
     onClick={handleClick}>
-      
+      {console.log(url)}
       <CardMedia
-      style={{border:"red solid 2px"}}
+      
         component="img"
         height="140"
         image={url}
         alt="Paella dish"
       />
       <CardContent style={{background:"#EFEEFE"}}>
-          <h3>{title}</h3>
+          <h3 className='card-title'>{title}</h3>
           
-          <p>may 17,2021</p>
-        <Typography variant="body2" color="text.secondary">
+          <p>{date}</p>
+        <Typography variant="body2" className='card-content'   color="text.secondary">
           {content}
         </Typography>
       </CardContent>
+      <div className='card-email'>
       <IconButton>
             <FaUserCircle/>
           </IconButton>
-      <p>Walter@clarus</p>
+      <p>{userEmail}</p>
+      </div>
+      
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
             <AiFillHeart/>
