@@ -1,5 +1,5 @@
 
-import {getDatabase,ref,push,set, remove, update, } from "firebase/database"
+import {getDatabase,ref,push,set, remove, update } from "firebase/database"
 
 
 
