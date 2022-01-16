@@ -27,9 +27,9 @@ export const updateInfo =(info)=>{
     const db =getDatabase();
     
     
-    const newUserKey =push(child(ref(db),"contact/")).key;
+    
     const updates = {}
-    updates["contact/"+newUserKey]=info
+    updates["contact/"+info.id]=info
     return update(ref(db),updates)
 }
 

@@ -19,7 +19,8 @@ const UpdateBlog = () => {
         title:getInfo.title,
         url:getInfo.url,
         content:getInfo.content,
-        date:getInfo.date
+        date:getInfo.date,
+        id:id
     });
     
       const updateHandler=()=>{
