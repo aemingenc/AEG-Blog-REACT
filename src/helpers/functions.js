@@ -1,6 +1,6 @@
-import firebase from "./firebase"
+
 import {getDatabase,ref,push,set, remove, update, child} from "firebase/database"
-import { useEffect, useState } from "react";
+
 
 
 export const addInfo = (info)=>{

@@ -2,7 +2,6 @@ import React from 'react'
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import Login from "../pages/Login"
 import Navbar from "../components/Navbar"
-import About from "../pages/About"
 import Details from "../pages/Details"
 import Main from "../pages/Main"
 import NewBlog from "../pages/NewBlog"

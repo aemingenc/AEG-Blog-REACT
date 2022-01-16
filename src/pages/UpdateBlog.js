@@ -1,9 +1,9 @@
 import { Box } from '@mui/system'
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext'
 import { BlogContext } from '../contexts/BlogContext'
-import { deleteInfo, updateInfo } from '../helpers/functions'
+import {  updateInfo } from '../helpers/functions'
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 
