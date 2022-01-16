@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {useContext} from "react/cjs/react.development";
+import {useContext} from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../helpers/firebase";
