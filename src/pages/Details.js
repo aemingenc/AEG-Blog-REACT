@@ -21,7 +21,7 @@ const Details = () => {
     const {id}=useParams()
     const navigate =useNavigate()
  
-    const getUserInfo =currentInfo?.filter((user)=> user.id === id)
+    const getBlogInfo =currentInfo?.filter((blog)=> blog.id === id)
     const updateHandler =(id)=>{
         navigate(`/upDate/${id}`)
     }
@@ -29,7 +29,7 @@ const Details = () => {
 
     return (
         <div className='detail-container'>
-           {getUserInfo?.map((user,index)=>(
+           {getBlogInfo?.map((user,index)=>(
            <Card sx={{ minWidth: 300 ,minHeight:400}}>
       
       <CardMedia
